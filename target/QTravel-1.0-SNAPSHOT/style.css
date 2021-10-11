@@ -1,0 +1,52 @@
+body {
+    background: #ED4264;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #FFEDBC, #ED4264);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #FFEDBC, #ED4264); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#Titulo {
+    color: #2A2A2A;
+}
+
+.main {
+    background: white;
+    border-radius: 5px;
+    width: 40vw;
+    padding: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.box {
+    background: white;
+    border-radius: 5px;
+    display: none;
+    width: 40vw;
+    padding: 10px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 12px;
+    
+}
+
+.tableHeader {
+    font-size: 14px;
+    border-radius: 2px;
+}
