@@ -4,6 +4,7 @@
     Author     : Alejandro Ríos
 --%>
 
+<%@page import="com.mongodb.BasicDBObject"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="com.mongodb.DBObject"%>
 <%@page import="com.mycompany.qtravel.QTravelWS"%>
@@ -25,10 +26,6 @@
             <h1 id="Titulo">Quileia Travel!</h1>
             <% 
                 QTravelWS ws = new QTravelWS();
-                //ws.insertTourist("Luis Alejandro Ríos", "27-01-1997", "1032488686", "CC", 3, 24300.2, "Milan", true);
-                //ws.insertTourist("Nicole Stefanny Soto", "28-08-1996", "1016088252", "CC", 3, 24300.2, "Glasgow", true);
-                //ws.insertCity("Milan", 10200, "Cathedral", "Milano");
-                //ws.insertCity("Barcelona", 11000, "Sagrada Familia", "Barca");
             %>
             <form>
                 <input type="radio" id="tour" name="election" value="tourists">
@@ -123,7 +120,6 @@
                             + "</script>");
                 }
             %>
-            
         </div>
         <div id="touristRegister" class="box">
             <br><br>
