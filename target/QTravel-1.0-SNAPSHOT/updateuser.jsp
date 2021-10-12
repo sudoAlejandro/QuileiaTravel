@@ -35,18 +35,22 @@
                     final String searchDoc = request.getParameter("searchDoc");
                     DBCursor results = ws.findObject("tourists", "identity", searchDoc);
                     
-                    while(results.hasNext()){
-                        DBObject tourist = results.next();
-                        out.print("<tr>");
-                        out.println("<td>"+tourist.get("name")+"</td>");
-                        out.println("<td>"+tourist.get("birthday")+"</td>");   
-                        out.println("<td>"+tourist.get("identity")+"</td>");
-                        out.println("<td>"+tourist.get("identityType")+"</td>");
-                        out.println("<td>"+tourist.get("frequency")+"</td>");
-                        out.println("<td>"+tourist.get("budget")+"</td>");
-                        out.println("<td>"+tourist.get("destination")+"</td>");
-                        out.println("<td>"+tourist.get("creditCard")+"</td>");
-                        out.print("</tr>");
+                    if(results != null){
+                        while(results.hasNext()){
+                            DBObject tourist = results.next();
+                            out.print("<tr>");
+                            out.println("<td>"+tourist.get("name")+"</td>");
+                            out.println("<td>"+tourist.get("birthday")+"</td>");   
+                            out.println("<td>"+tourist.get("identity")+"</td>");
+                            out.println("<td>"+tourist.get("identityType")+"</td>");
+                            out.println("<td>"+tourist.get("frequency")+"</td>");
+                            out.println("<td>"+tourist.get("budget")+"</td>");
+                            out.println("<td>"+tourist.get("destination")+"</td>");
+                            out.println("<td>"+tourist.get("creditCard")+"</td>");
+                            out.print("</tr>");
+                        }
+                    }else{
+                        response.sendRedirect("index.jsp");
                     }
                 %>
             </table>

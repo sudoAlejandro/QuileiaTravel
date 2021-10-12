@@ -124,20 +124,20 @@
         <div id="touristRegister" class="box">
             <br><br>
             <form method="POST" action="newuser.jsp">
-                <label for="fname">Nombre completo: </label>
-                <input type="text" id="fname" name="fname" style="width: 15rem; margin-right: 2rem">
-                <label for="birthDate">Fecha de nacimiento: </label>
+                <label for="fname">Nombre completo*:  </label>
+                <input type="text" id="fname" name="fname" style="width: 15rem; margin-right: 2rem" required>
+                <label for="birthDate">Fecha de nacimiento*:  </label>
                 <input type="date" id="birthDate" name="birthDate" value="1997-01-27" min="1900-01-01" max="2021-01-01"><br><br>
-                <label for="docNum">Número de documento: </label>
-                <input type="text" id="docNum" name="docNum" style="width: 11rem; margin-right: 2rem">
-                <label for="docType">Tipo de documento: </label>
-                <input type="text" id="docType" name="docType" style="width: 10rem"><br><br>
-                <label for="freq">Número de viajes al mes: </label>
-                <input type="number" id="freq" name="freq" value="0" min="0" max="100" style="margin-right: 2rem">
-                <label for="budget">Presupuesto: </label>
-                <input type="number" step="any" id="budget" name="budget" value="0" style="margin-right: 1rem">
-                <label for="destiny">Destino: </label>
-                <select id="destiny" name="destiny">
+                <label for="docNum">Número de documento*:  </label>
+                <input type="text" id="docNum" name="docNum" style="width: 11rem; margin-right: 2rem" required>
+                <label for="docType">Tipo de documento*:  </label>
+                <input type="text" id="docType" name="docType" style="width: 10rem" required><br><br>
+                <label for="freq">Número de viajes al mes*:  </label>
+                <input type="number" id="freq" name="freq" value="0" min="0" max="100" style="margin-right: 2rem" required>
+                <label for="budget">Presupuesto*:  </label>
+                <input type="number" step="any" id="budget" name="budget" value="0" style="margin-right: 1rem" required>
+                <label for="destiny">Destino*:  </label>
+                <select id="destiny" name="destiny" required>
                     <%
                         while(cursorCiudades.hasNext()){
                             DBObject actual = cursorCiudades.next();
@@ -145,54 +145,54 @@
                         }
                     %>
                 </select><br><br>
-                <label for="card">Tarjeta de Crédito: </label>
+                <label for="card">Tarjeta de Crédito*:  </label>
                 <select id="card" name="card" style="margin-right: 2rem">
                     <option value="true">Sí</option>
                     <option value="false">No</option>
                 </select>
-                <label for="travelDate">Fecha de viaje: </label>
-                <input type="date" id="travelDate" name="travelDate" value="2022-01-01" min="2021-01-01" max="2030-12-31" style="margin-right: 2rem">
+                <label for="travelDate">Fecha de viaje*:  </label>
+                <input type="date" id="travelDate" name="travelDate" value="2022-01-01" min="2021-01-01" max="2030-12-31" style="margin-right: 2rem" required>
                 <input type="submit" value="Registrar turista">
             </form>
         </div>
         <div id="updateT" class="box">
             <form method="POST" action="updateuser.jsp">
-                <label for="searchDoc">Número de documento: </label>
-                <input type="text" id="searchDoc" name="searchDoc" style="width: 15rem">
+                <label for="searchDoc">Número de documento*:  </label>
+                <input type="text" id="searchDoc" name="searchDoc" style="width: 15rem" required>
                 <input type="submit" value="Buscar turistas">
             </form>            
         </div>
         <div id="addCity" class="box">
             <form method="POST" action="newcity.jsp">
-                <label for="name">Nombre de la ciudad: </label>
-                <input type="text" id="name" name="name" style="margin-right: 2rem">
-                <label for="population">Población: </label>
-                <input type="number" id="population" name="population"><br><br>
-                <label for="touristPlace">Lugar Turístico: </label>
-                <input type="text" id="touristPlace" name="touristPlace" style="margin-right: 2rem">
-                <label for="hotel">Hotel: </label>
-                <input type="text" id="hotel" name="hotel"><br><br>
+                <label for="name">Nombre de la ciudad*:  </label>
+                <input type="text" id="name" name="name" style="margin-right: 2rem" required>
+                <label for="population">Población*:  </label>
+                <input type="number" id="population" name="population" required><br><br>
+                <label for="touristPlace">Lugar Turístico*:  </label>
+                <input type="text" id="touristPlace" name="touristPlace" style="margin-right: 2rem" required>
+                <label for="hotel">Hotel*:  </label>
+                <input type="text" id="hotel" name="hotel" required><br><br>
                 <input type="submit" value="Agregar">
             </form>
         </div>
         <div id="updateC" class="box">
             <form method="POST" action="updatecity.jsp">
-                <label for="searchCity">ID de Ciudad: </label>
-                <input type="text" id="searchCity" name="searchCity" style="width: 15rem">
+                <label for="searchCity">ID de Ciudad*:  </label>
+                <input type="text" id="searchCity" name="searchCity" style="width: 15rem" required>
                 <input type="submit" value="Buscar ciudad">
             </form>            
         </div>
         <div id="delT" class="box">
             <form method="POST" action="deluser.jsp">
-                <label for="touristSelected">Identifición del turista: </label>
-                <input type="text" id="touristSelected" name="touristSelected" style="width: 15rem">
+                <label for="touristSelected">Identifición del turista*:  </label>
+                <input type="text" id="touristSelected" name="touristSelected" style="width: 15rem" required>
                 <input type="submit" value="Eliminar turista">
             </form>            
         </div>
         <div id="delC" class="box">
             <form method="POST" action="delcity.jsp">
-                <label for="citySelected">Id de la ciudad: </label>
-                <input type="text" id="citySelected" name="citySelected" style="width: 15rem">
+                <label for="citySelected">Id de la ciudad*:  </label>
+                <input type="text" id="citySelected" name="citySelected" style="width: 15rem" required>
                 <input type="submit" value="Eliminar ciudad">
             </form>            
         </div>
