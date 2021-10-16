@@ -40,6 +40,7 @@
                             DBObject tourist = results.next();
                             out.print("<tr>");
                             out.println("<td>"+tourist.get("name")+"</td>");
+                            out.println("<td>"+tourist.get("lname")+"</td>");
                             out.println("<td>"+tourist.get("birthday")+"</td>");   
                             out.println("<td>"+tourist.get("identity")+"</td>");
                             out.println("<td>"+tourist.get("identityType")+"</td>");
@@ -59,6 +60,7 @@
                 <select id="criteria" name="criteria" value="">
                     <option value=""></option>
                     <option value="name">Nombre</option>
+                    <option value="lname">Apellido</option>
                     <option value="birthday">Fecha de nacimiento</option>
                     <option value="identity">Identificación</option>
                     <option value="identityType">Tipo de documento</option>

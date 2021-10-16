@@ -37,7 +37,7 @@
                         out.println("<td>"+city.get("id")+"</td>");
                         out.println("<td>"+city.get("name")+"</td>");   
                         out.println("<td>"+city.get("population")+"</td>");
-                        out.println("<td>"+city.get("touristicPlace")+"</td>");
+                        out.println("<td>"+city.get("touristPlace")+"</td>");
                         out.println("<td>"+city.get("hotel")+"</td>");
                         out.print("</tr>");
                     }

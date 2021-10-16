@@ -9,7 +9,6 @@
 <%@page import="com.mongodb.DBObject"%>
 <%@page import="com.mycompany.qtravel.QTravelWS"%>
 <%@page import="com.mongodb.DBCursor"%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -46,7 +45,8 @@
                                 //String st = "<tr style=\"background-color: #95A5A6;\">";
                                 out.print("<thead>");
                                 out.print("<tr class=\"tableHeader\">");
-                                out.println("<th>Nombre</th>");
+                                out.println("<th>Nombres</th>");
+                                out.println("<th>Apellidos</th>");
                                 out.println("<th>Nacimiento</th>");
                                 out.println("<th>Identificación</th>");
                                 out.println("<th>tipo de id</th>");
@@ -61,6 +61,7 @@
                             DBObject tourist = cursor.next();
                             out.print("<tr>");
                             out.println("<td>"+tourist.get("name")+"</td>");
+                            out.println("<td>"+tourist.get("lname")+"</td>");
                             out.println("<td>"+tourist.get("birthday")+"</td>");   
                             out.println("<td>"+tourist.get("identity")+"</td>");
                             out.println("<td>"+tourist.get("identityType")+"</td>");
@@ -124,8 +125,10 @@
         <div id="touristRegister" class="box">
             <br><br>
             <form method="POST" action="newuser.jsp">
-                <label for="fname">Nombre completo*:  </label>
+                <label for="fname">Nombre*:  </label>
                 <input type="text" id="fname" name="fname" style="width: 15rem; margin-right: 2rem" required>
+                <label for"lname">Apellido*:  </label>
+                <input type="text" id="lname" name="lname" style="width: 15rem; margin-right: 2rem" required><br><br>
                 <label for="birthDate">Fecha de nacimiento*:  </label>
                 <input type="date" id="birthDate" name="birthDate" value="1997-01-27" min="1900-01-01" max="2021-01-01"><br><br>
                 <label for="docNum">Número de documento*:  </label>

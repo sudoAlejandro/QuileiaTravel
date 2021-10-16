@@ -26,11 +26,12 @@ public class QTravelWS {
     }
     //Método para añadir turista
     @WebMethod(operationName = "addT")
-    public String insertTourist(@WebParam(name = "name") String name, @WebParam(name = "birthday") String birthday, @WebParam(name = "identity") String identity, @WebParam(name = "identityType") String identityType, @WebParam(name = "frequency") Integer frequency, @WebParam(name = "budget") Double budget, @WebParam(name = "destination") String destination, @WebParam(name = "creditCard") Boolean creditCard, @WebParam(name = "travelDate") String travelDate) {
+    public String insertTourist(@WebParam(name = "name") String name,@WebParam(name = "lname") String lname, @WebParam(name = "birthday") String birthday, @WebParam(name = "identity") String identity, @WebParam(name = "identityType") String identityType, @WebParam(name = "frequency") Integer frequency, @WebParam(name = "budget") Double budget, @WebParam(name = "destination") String destination, @WebParam(name = "creditCard") Boolean creditCard, @WebParam(name = "travelDate") String travelDate) {
         DB db = connection();
         DBCollection table = db.getCollection("tourists");
         BasicDBObject document = new BasicDBObject();
         document.put("name",name);
+        document.put("lname", lname);
         document.put("birthday", birthday);
         document.put("identity",identity);
         document.put("identityType",identityType);
@@ -112,9 +113,11 @@ public class QTravelWS {
     @WebMethod(operationName = "sobrecupo")
     public Boolean sobrecupo(@WebParam(name = "city") String city, @WebParam(name = "travelDate") String travelDate) {
         DB db = connection();
-        DBCollection table = db.getCollection("tourists");
-        DBObject matchs = new BasicDBObject("travelDate", travelDate);
-        DBCursor results = table.find(matchs);
-        return results.size() > 4;
+        DBCollection touristTable = db.getCollection("tourists");
+        BasicDBObject filtro = new BasicDBObject();
+        filtro.put("destination", city);
+        filtro.put("travelDate", travelDate);
+        DBCursor results = touristTable.find(filtro);
+        return results.size() > 1;
     }
 }
